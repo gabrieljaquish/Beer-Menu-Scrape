@@ -1,5 +1,3 @@
-# Beer-Menu-Scrape
-
 What's it for?
 -------------
 This little program's intent is to gather data from around the web regarding Beer
