@@ -13,7 +13,7 @@ This helps me keep an eye on the craft beer market on a local level by targeting
 The eventual hope for this program is to write this data on a daily basis to a SQL database.
 Currently it is just a simple python script to scrape data out of tables found at <a href="http://www.beermenus.com" title="BeautifulSoup">BeerMenus.com</a>
 
-a href="http://www.beermenus.com" title="BeautifulSoup">BeerMenus.com</a> provides bars, restaurants and breweries with a method of posting their current drafts online.
+<a href="http://www.beermenus.com" title="BeautifulSoup">BeerMenus.com</a> provides bars, restaurants and breweries with a method of posting their current drafts online.
 scaping the data from local establishments that use beermenus.com can help build historical pricing information.
 
 Prerequisites
