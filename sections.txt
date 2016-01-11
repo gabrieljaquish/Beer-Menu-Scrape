@@ -1,0 +1,12 @@
+#Section styles are used by beermenus to denote what type of
+#drinks are listed in that table
+#<table class="beermenu on_tap-section">  would be beers on tap
+#
+#
+featured-section
+house_beers-section
+on_tap-section
+bottles-section
+cans-section
+casks-section
+cider-section

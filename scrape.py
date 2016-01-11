@@ -1,8 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib2
+import sqlite3
 import time
-import sys
-import csv
 
 ####################### Functions
 
@@ -34,6 +33,15 @@ def ScrapeMenu(menu_num):
             tbody = []
             tbody = soup.findAll('table')
             return tbody
+
+#################################
+
+class Beer:
+    Brewery
+    BeerName
+    ABV
+    ServingSize
+    Price
 
 #################################################################
 ############ Main
@@ -93,10 +101,38 @@ for menu in menu_numbers:
             aBeer = ""
 
 
-#Name the scrape file with todays date + the menu number
-date_filename = time.strftime("%d-%m-%Y") + "_" + menu +".csv"
-f = open(date_filename, 'w')
+            rec = {'name': {'first': 'Bob', 'last': 'Smith'},
 
+
+#Name the scrape file with todays date + the menu number
+date_filename = time.strftime("%d-%m-%Y") + "_" + menu + ".csv"
+f = open(date_filename, 'w')
 
 for each_beer in Beers:
     f.write(str(each_beer) + "\n")
+f.close()
+
+
+###################### SQL Storage
+
+db = sqlite3.connect(':memory:')
+
+#database is named after the specific menu ID
+def init_db(cursor):
+    cur.execute('''CREATE TABLE menu (
+        Row INTEGER,
+        Name TEXT,
+        ABV REAL,
+        Price REAL)''')
+
+def populate_db(cursor, ):
+    rdr = csv.reader(csv_fp)
+    cur.executemany('''
+        INSERT INTO foo (Row, Name, Year, Priority)
+        VALUES (?,?,?,?)''', rdr)
+
+cursor = db.cursor()
+init_db(cursor)
+
+populate_db(cur, open('my_csv_input_file.csv'))
+db.commit()
